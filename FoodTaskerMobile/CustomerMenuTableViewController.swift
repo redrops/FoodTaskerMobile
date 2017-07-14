@@ -27,13 +27,29 @@ class CustomerMenuTableViewController: UITableViewController {
         view.backgroundColor = UIColor(red: 0.19, green: 0.18, blue: 0.31, alpha: 1.0)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if segue.identifier == "CustomerLogout" {
+        if identifier == "CustomerLogout" {
             
-            FBManager.shared.logOut()
-            User.currentUser.resetInfo()
+            APIManager.shared.logout(completionHandler: { (error) in
+                
+                if error == nil {
+                    FBManager.shared.logOut()
+                    User.currentUser.resetInfo()
+                    
+                    // Re-render the LoginView once you completed your loggin out process
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let appController = storyboard.instantiateViewController(withIdentifier: "MainController") as! LoginViewController
+                    
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window!.rootViewController = appController
+                    
+                }
+            })
             
+            return false
         }
+        
+        return true
     }
 }

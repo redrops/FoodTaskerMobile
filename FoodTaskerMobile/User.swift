@@ -19,7 +19,7 @@ class User {
     
     func setInfo(json: JSON) {
         self.name = json["name"].string
-        self.name = json["name"].string
+        self.email = json["email"].string
         
         let image = json["picture"].dictionary
         let imageData = image?["data"]?.dictionary
