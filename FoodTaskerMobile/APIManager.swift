@@ -28,8 +28,8 @@ class APIManager {
         let url = baseURL!.appendingPathComponent(path)
         let params: [String: Any] = [
         "grant_type": "convert_token",
-        "client-id": CLIENT_ID,
-        "client-secret": CLIENT_SECRET,
+        "client_id": CLIENT_ID,
+        "client_secret": CLIENT_SECRET,
         "backend": "facebook",
         "token": FBSDKAccessToken.current().tokenString,
         "user_type": userType
@@ -63,7 +63,7 @@ class APIManager {
         let url = baseURL!.appendingPathComponent(path)
         let params: [String: Any] = [
             "client_id": CLIENT_ID,
-            "client-secret": CLIENT_SECRET,
+            "client_secret": CLIENT_SECRET,
             "token": self.accessToken
         
         ]

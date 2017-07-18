@@ -7,14 +7,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1673569436283996</string>
+				<string>fb1598450410187624</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>1673569436283996</string>
+	<string>1598450410187624</string>
 	<key>FacebookDisplayName</key>
-	<string>FoodTasker</string>
+	<string>Foodtasker</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
