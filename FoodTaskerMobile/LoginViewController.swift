@@ -30,9 +30,9 @@ class LoginViewController: UIViewController {
                 //                self.bLogin.sizeToFit()
                 
             })
-            
+        } else {
+            self.bLogout.isHidden = true
         }
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
