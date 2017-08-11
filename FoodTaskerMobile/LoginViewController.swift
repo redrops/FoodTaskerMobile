@@ -67,7 +67,6 @@ class LoginViewController: UIViewController {
                     self.viewDidAppear(true)
                 }
             })
-            
         } else {
             
             FBManager.shared.logIn(withReadPermissions: ["public_profile", "email"], from: self, handler: { (result, error) in

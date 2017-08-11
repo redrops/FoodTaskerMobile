@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -159,13 +159,16 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dYL-y1-mb7" id="0QQ-zZ-OGL"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="226" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JBR-32-EJc">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantCell" rowHeight="226" id="kkd-pO-dUv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantCell" rowHeight="226" id="kkd-pO-dUv" customClass="RestaurantViewCell" customModule="FoodTaskerMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="226"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kkd-pO-dUv" id="quR-D2-6tn">
@@ -217,6 +220,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
+                                            <outlet property="imgRestaurantLogo" destination="jRN-sV-yZr" id="S2W-mo-jJh"/>
+                                            <outlet property="lbRestaurantAddress" destination="vzP-SB-uFJ" id="bUL-fb-YxC"/>
+                                            <outlet property="lbRestaurantName" destination="7jG-UL-mUw" id="VNa-2J-rNY"/>
                                             <segue destination="zZp-d3-qYd" kind="show" identifier="MealList" id="bpz-n1-Wy7"/>
                                         </connections>
                                     </tableViewCell>
@@ -243,6 +249,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButton" destination="oKd-eV-1EK" id="lxZ-2e-Zu1"/>
+                        <outlet property="searchRestaurant" destination="POM-3j-v2W" id="4GX-Yp-L4W"/>
+                        <outlet property="tbvRestaurant" destination="JBR-32-EJc" id="3h7-bg-WZ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rck-Yz-Np2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -477,7 +485,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" id="78G-Gi-hd5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealCell" id="78G-Gi-hd5" customClass="MealViewCell" customModule="FoodTaskerMobile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="78G-Gi-hd5" id="OHp-uY-rTA">
@@ -498,13 +506,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grass fed beef, American cheese" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im0-Dq-Zhb">
-                                            <rect key="frame" x="18" y="43" width="228" height="41"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <rect key="frame" x="18" y="43" width="228" height="38.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mER-iE-utc">
-                                            <rect key="frame" x="18" y="92" width="228" height="21"/>
+                                            <rect key="frame" x="18" y="89.5" width="228" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -526,6 +534,10 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="imgMealImage" destination="lMr-vG-ifc" id="G6Y-jE-xrN"/>
+                                    <outlet property="lbMealName" destination="aeX-Vs-Vvp" id="RLj-zm-Gii"/>
+                                    <outlet property="lbMealPrice" destination="mER-iE-utc" id="bxp-0c-uzf"/>
+                                    <outlet property="lbMealShortDescription" destination="im0-Dq-Zhb" id="hTo-oI-jgJ"/>
                                     <segue destination="pYO-Hi-Z4F" kind="show" identifier="MealDetails" id="xsi-zy-TZQ"/>
                                 </connections>
                             </tableViewCell>
@@ -552,7 +564,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_image" translatesAutoresizingMaskIntoConstraints="NO" id="ELe-pC-Cqk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_image" translatesAutoresizingMaskIntoConstraints="NO" id="ELe-pC-Cqk">
                                 <rect key="frame" x="0.0" y="64" width="375" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="GdJ-lI-7l7"/>
@@ -592,6 +604,9 @@
                                         <state key="normal" title="ADD TO TRAY">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addToTray:" destination="pYO-Hi-Z4F" eventType="touchUpInside" id="EVL-m4-KCo"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 12.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-7s-6cD">
                                         <rect key="frame" x="287" y="55" width="76" height="21"/>
@@ -621,6 +636,9 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addQty:" destination="pYO-Hi-Z4F" eventType="touchUpInside" id="OZ4-fw-1zY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xw-ie-gfD">
                                         <rect key="frame" x="337" y="5" width="30" height="30"/>
@@ -632,6 +650,9 @@
                                         <state key="normal" title="-">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="removeQty:" destination="pYO-Hi-Z4F" eventType="touchUpInside" id="PBe-I2-Jd9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -676,6 +697,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imgMeal" destination="ELe-pC-Cqk" id="hA3-Y8-iyj"/>
+                        <outlet property="lbMealName" destination="sLb-6M-Jhg" id="ulY-gI-U7Y"/>
+                        <outlet property="lbMealShortDescription" destination="xuY-uj-UXN" id="IR3-M7-FUh"/>
+                        <outlet property="lbQty" destination="2Nl-PX-74l" id="DCm-Hv-FXe"/>
+                        <outlet property="lbTotal" destination="SZm-7s-6cD" id="hmU-ST-fup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODl-0H-MMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,7 +721,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tnc-yT-Mea">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tnc-yT-Mea">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -701,14 +729,14 @@
                                 </constraints>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrayItemCell" id="78M-IB-hW3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrayItemCell" id="78M-IB-hW3" customClass="TrayViewCell" customModule="FoodTaskerMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="78M-IB-hW3" id="Rca-3Z-FIH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u47-Go-cna">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u47-Go-cna">
                                                     <rect key="frame" x="20" y="12" width="21" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="21" id="303-tR-uk3"/>
@@ -744,6 +772,11 @@
                                                 <constraint firstItem="ee1-va-sMa" firstAttribute="centerY" secondItem="Rca-3Z-FIH" secondAttribute="centerY" id="yjY-OJ-Xz1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbMealName" destination="w2G-Oc-Lkq" id="SBI-OA-hJd"/>
+                                            <outlet property="lbQty" destination="u47-Go-cna" id="KJB-ig-Ko5"/>
+                                            <outlet property="lbSubTotal" destination="ee1-va-sMa" id="ePF-xQ-f90"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -751,7 +784,7 @@
                                     <outlet property="delegate" destination="0fD-0E-zIn" id="6d4-wd-za6"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQA-Zz-QMr">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQA-Zz-QMr">
                                 <rect key="frame" x="0.0" y="264" width="375" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiP-VJ-wXc">
@@ -792,7 +825,7 @@
                                     <constraint firstItem="OoN-6u-YHT" firstAttribute="leading" secondItem="yQA-Zz-QMr" secondAttribute="leading" constant="20" id="zsm-eb-Iom"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-m1-BYk">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-m1-BYk">
                                 <rect key="frame" x="0.0" y="324" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJF-oC-hfp">
@@ -809,6 +842,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="0fD-0E-zIn" id="tyd-yM-9ft"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -821,7 +857,7 @@
                                     <constraint firstItem="kJF-oC-hfp" firstAttribute="leading" secondItem="3fW-m1-BYk" secondAttribute="leading" constant="20" id="zpM-37-3G8"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEf-cg-y7W">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEf-cg-y7W">
                                 <rect key="frame" x="8" y="609" width="359" height="50"/>
                                 <color key="backgroundColor" red="0.30588235289999999" green="0.69019607839999997" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -832,10 +868,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OsU-ia-mjq" kind="show" id="vOw-FR-see"/>
+                                    <action selector="addPayment:" destination="0fD-0E-zIn" eventType="touchUpInside" id="OJr-1w-voz"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6j-eA-qFL">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6j-eA-qFL">
                                 <rect key="frame" x="5" y="389" width="365" height="213"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Eaj-Bd-7Md">
@@ -880,7 +916,16 @@
                         <barButtonItem key="leftBarButtonItem" image="icon_menu_24dp" id="QWf-75-jxC"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bAddPayment" destination="lEf-cg-y7W" id="zom-i1-AhJ"/>
+                        <outlet property="lbTotal" destination="MLp-fV-iV1" id="zSq-y8-Gb8"/>
+                        <outlet property="map" destination="Eaj-Bd-7Md" id="Lk5-fG-fdi"/>
                         <outlet property="menuBarButton" destination="QWf-75-jxC" id="juB-Us-hOK"/>
+                        <outlet property="tbAddress" destination="fAJ-k1-CaZ" id="XWi-Xz-Y7P"/>
+                        <outlet property="tbvMeals" destination="tnc-yT-Mea" id="tsg-bg-akt"/>
+                        <outlet property="viewAddress" destination="3fW-m1-BYk" id="8WZ-Re-UPg"/>
+                        <outlet property="viewMap" destination="o6j-eA-qFL" id="XU7-wd-QQr"/>
+                        <outlet property="viewTotal" destination="yQA-Zz-QMr" id="N5g-ge-qNa"/>
+                        <segue destination="OsU-ia-mjq" kind="show" identifier="AddPayment" id="ct9-yN-WW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQK-DX-Lb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -918,7 +963,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cZC-2g-mGC" kind="show" identifier="ViewOrder" id="98W-rg-foy"/>
+                                    <action selector="placeOrder:" destination="OsU-ia-mjq" eventType="touchUpInside" id="6YV-dt-LmI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -933,6 +978,7 @@
                     </view>
                     <connections>
                         <outlet property="cardTextField" destination="Tye-lt-mEw" id="fT2-tU-hRH"/>
+                        <segue destination="cZC-2g-mGC" kind="show" identifier="ViewOrder" id="w6H-RE-mc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CI-q6-ghq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1094,9 +1140,9 @@
         <image name="splash_screen" width="185" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="E1i-p1-4uc"/>
         <segue reference="8e0-8L-ECF"/>
-        <segue reference="98W-rg-foy"/>
+        <segue reference="E1i-p1-4uc"/>
+        <segue reference="w6H-RE-mc6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.14117647058823529" green="0.12941176470588234" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
 </document>
